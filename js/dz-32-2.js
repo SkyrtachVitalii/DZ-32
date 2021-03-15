@@ -42,7 +42,7 @@ async function searchMyPet(){
             let myPetName = createNodeElem("div", ["user__name"], "Name: " + myData[index].name);
             let myPetId = createNodeElem("div", ["user__phone"], "ID: " + myData[index].id);
             let myPetStatus = createNodeElem("div", ["user__phone"], "Status: " + myData[index].status);
-            myPetImg = createNodeElem("div", ["user__img"], "", [
+            myPetImg = createNodeElem("img", ["user__img"], "", [
                 {
                     name: "src", 
                     value: "https://learnwebcode.com/images/lessons/insert-image-funny-dog.jpg"
