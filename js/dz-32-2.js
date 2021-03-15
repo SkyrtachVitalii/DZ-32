@@ -41,32 +41,16 @@ async function searchMyPet(){
             let myPetItem = createNodeElem("div", ["user__item"]);
             let myPetName = createNodeElem("div", ["user__name"], "Name: " + myData[index].name);
             let myPetId = createNodeElem("div", ["user__phone"], "ID: " + myData[index].id);
-            let myPetStatus = createNodeElem("div", ["user__phone"], "Status: " + myData[index].status);
-            myPetImg = createNodeElem("img", ["user__img"], "", [
-                {
-                    name: "src", 
-                    value: "https://learnwebcode.com/images/lessons/insert-image-funny-dog.jpg"
-                }, 
-                {
-                    name: "alt", 
-                    value: ""
-                }
-            ]);
-            
-            
-            
-            
-            // if(!myData[index].photoUrls[0]){
-            //     myPetImg = createNodeElem("div", ["user__img"], "", [{name: "src", value: "https://cdn.pixabay.com/photo/2016/02/19/15/46/labrador-retriever-1210559__340.jpg"}, {name: "alt", value: ""}]);
-            // }else{
-            //     myPetImg = createNodeElem("div", ["user__img"], "", [{name: "src", value: myData[index].photoUrls[0]}]);
-            // }
-
-
+            let myPetStatus = createNodeElem("div", ["user__phone"], "Status: " + myData[index].status);          
+        
+            if(!myData[index].photoUrls[0]){
+                myPetImg = createNodeElem("img", ["user__img"], "", [{name: "src", value: "images/invalid_img_src.jpg"}]);
+            }else{
+                myPetImg = createNodeElem("img", ["user__img"], "", [{name: "src", value: myData[index].photoUrls[0]}]);
+            }
 
             myPetItem.append(myPetImg, myPetName, myPetId, myPetStatus);
             document.getElementById("myPets").appendChild(myPetItem);
-            // console.log(myData[index].photoUrls[0]);
         })
     }catch (e){
         console.log(e);
